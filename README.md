@@ -5,7 +5,7 @@ This file has
  - __init__.py which is the first version of the source code
  - Rules.xlsx which contains the rules in excel sheet
 
-Procedure
+Procedure\
 1, install pandas package if not installed yet
 
 2, run with the following command 
