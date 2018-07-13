@@ -34,13 +34,13 @@ Procedure\
    -> input 1 for Yes and 0 for No.\
    Q11: Is uber accessible for you now?\
    -> input 1 for Yes and 0 for No.\
-   Q12: How safe is using a uber for you?\ 
+   Q12: How safe is using a uber for you? \ 
    -> input 0 for low, 1 for mid, 2 for high\
    Q13: Is train available for you now? \
    -> input 1 for Yes and 0 for No.\
    Q14: Is train accessible for you now?\
    -> input 1 for Yes and 0 for No.\
-   Q15: How safe is using a train for you?\ 
+   Q15: How safe is using a train for you? \ 
    -> input 0 for low, 1 for mid, 2 for high\
    Q16: Is bike available for you now? \
    -> input 1 for Yes and 0 for No.\
