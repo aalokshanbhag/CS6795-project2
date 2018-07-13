@@ -46,7 +46,7 @@ Procedure\
    -> input 1 for Yes and 0 for No.\
    Q17: Is bike accessible for you now?\
    -> input 1 for Yes and 0 for No.\
-   Q18: How safe is using bike for you? 
+   Q18: How safe is using bike for you? \
    -> input 0 for low, 1 for mid, 2 for high\
    Q19: How is your health condition?\
    -> input 0 for low, 1 for mid, 2 for high\
