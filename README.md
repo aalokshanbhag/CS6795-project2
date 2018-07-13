@@ -69,7 +69,7 @@ Procedure\
    How much time is available for you? (0 for short, 1 for mid, 2 for long) : 2\
    How urgent is this journey for you? (0 for No, 1 for just so so, 2 for yes) : 0
 
-4, Your command shows which rules are fired.\
+4, Your command shows which rules are fired.
 
    The example command line with the example input above is as follows.\
    Rule 4 fired now in priority queue\
@@ -77,6 +77,8 @@ Procedure\
    Rule 8 fired now in priority queue
    
 5, Then your command shows the result which type of transportation you may choose which is either "car", "bus", "walk", "uber", "train", or "bike".
+   
+   In the example case above, the command line output "bus".
 
 ##Note\
 Python3.4.2 is used for this project.\
