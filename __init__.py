@@ -2,126 +2,145 @@ import sys
 import queue as queue
 import pandas as pd
 
-class status:
-    '''
-    This calss is for a person's state
-    '''
-    def __init__(self, confidence_level, attention_level, interest_level, opinion):
-        self.opinion = opinion         # totallyDisagree(-2), disagree(-1), neutral(0), agree(+1), totallyAgree(+2)
-        self.initOpinion  = opinion    # totallyDisagree(-2), disagree(-1), neutral(0), agree(+1), totallyAgree(+2)
-        self.cLevel = confidence_level # low(0), mid(1), high(2)
-        self.aLevel = attention_level  # low(0), mid(1), high(2)
-        self.iLevel = interest_level   # low(0), mid(1), high(2)
-        
-    def change(self, rule):
-        if rule.oRate != None:
-            self.opinion = self.opinion + rule.oRate
-            if self.opinion > 2:
-                self.opinion = 2
-            if self.opinion < -2:
-                self.opinion = -2
-        if rule.cRate != None:
-            self.cLevel = self.cLevel + rule.cRate
-            if self.cLevel > 2:
-                self.cLevel = 2
-            if self.cLevel < 0:
-                self.cLevel = 0
-        if rule.aRate != None:
-            self.aLevel = self.aLevel + rule.aRate
-            if self.aLevel > 2:
-                self.aLevel = 2
-            if self.aLevel < 0:
-                self.aLevel = 0
-        if rule.iRate != None:
-            self.iLevel = self.iLevel + rule.iRate
-            if self.iLevel > 2:
-                self.iLevel = 2
-            if self.iLevel < 0:
-                self.iLevel = 0
-        
-    def check(self):
-        if (self.opinion >= 0 and self.initOpinion < 0) or \
-        (self.opinion <= 0 and self.initOpinion > 0) or \
-        (self.opinion != 0 and self.initOpinion == 0):
-            return "Opinion Changed!"
-        return "Stick to the original opinion..."
+class agent:
+    '''This class is for an agent's state'''
+    def __init__(self, _health_level, _finance_level, _has_car, _has_bike):
+        self.health_level = _health_level # low(0), mid(1), high(2)
+        self.finance_level = _finance_level # low(0), mid(1), high(2)
+        self.has_car = _has_car  # True, False
+        self.has_bike = _has_bike  # True, False
         
     def __str__(self):
-        return 'Current State Summary \n' \
-        + 'current opinion = {}\n'.format(self.opinion) \
-        + 'original opinion = {}\n'.format(self.initOpinion) \
-        + 'confidence level = {}\n'.format(self.cLevel) \
-        + 'attention level = {}\n'.format(self.aLevel) \
-        + 'interset level = {}\n'.format(self.iLevel) 
+        return 'Current agent State Summary \n' \
+        + 'health_level = {}\n'.format(self.health_level) \
+        + 'fatigue_level = {}\n'.format(self.fatigue_level) \
+        + 'has_car = {}\n'.format(self.has_car) \
+        + 'has_bike = {}\n'.format(self.has_bike)
     
 class env:
-    '''
-    This class is for an enviroment which represents quality of comments and majority opinion
-    '''
-    def __init__(self, q1, q2, q3, q4, q5):
-        self.q1 = q1 #q1. Does the article have a bias? (yes, no, cantSay)
-        self.q2 = q2 #q2. Which comments did you read? (all, sortedByLikes, sampledBothSidesOfArgument, unsorted, never)
-        self.q3 = q3 #q3. Are the comments offensive? (notAtAll, little, neutral, quite, very)
-        self.q4 = q4 #q4. Which way is the comment section leaning (stronglyAgainstYou, againstYou, neutral, withYou, stronglyWithYou)
-        self.q5 = q5 #q5. Are the comments well reasoned ? (notAtAll, little, neutral, quite, very)
-
-class rule:
-    '''
-    This class if for a rule. Each rules has different condtions.
-    '''
-    def __init__(self, rule_id, opinion, confidence_level, attention_level, interest_level,\
-    q1, q2, q3, q4, q5, opinion_changeRate, confidence_changeRate, attention_changeRate, interest_changeRate):
-        """Conditions where the rule is fired"""
-        self.ID = rule_id
-        self.opinion = opinion
-        self.cLevel = confidence_level
-        self.aLevel = attention_level
-        self.iLevel = interest_level
-        self.q1 = q1
-        self.q2 = q2
-        self.q3 = q3
-        self.q4 = q4
-        self.q5 = q5
-        self.oRate = opinion_changeRate
-        self.cRate = confidence_changeRate
-        self.aRate = attention_changeRate
-        self.iRate = interest_changeRate
-        self.score = 0
-        self.isUsed = False
-        self.numCond = 0
-        if opinion != None: self.numCond += 1
-        if confidence_level != None: self.numCond += 1
-        if attention_level != None: self.numCond += 1
-        if interest_level != None: self.numCond += 1
-        if q1 != None: self.numCond += 1
-        if q2 != None: self.numCond += 1
-        if q3 != None: self.numCond += 1
-        if q4 != None: self.numCond += 1
-        if q5 != None: self.numCond += 1
+    '''This class is for an enviroment factors'''
+    def __init__(self, _weather, _time_of_day):
+        self.weather = _weather # bad(0), so so(1), good(2) *bad means you travel in a bad weather like rainy
+        self.time_of_day = _time_of_day # bad(0), so so(1), good(2) *bad means you travel in a rush hour 
         
-    def computeScore(self, status, env):
-        '''
-        Compute how many conditions are statisfied based on "state" and "environment"
-        '''
+    def __str__(self):
+        return 'Current journey Summary \n' \
+        + 'weather = {}\n'.format(self.weather) \
+        + 'time_of_day = {}\n'.format(self.time_of_day)
+        
+        
+class journey:
+    '''This class is for characteristics of a journey'''
+    def __init__(self, _distance, _time_available, _urgent_level):
+        self.distance =_distance              # short(0), mid(1), long(2)
+        self.time_available = _time_available # short(0), mid(1), long(2)
+        self.urgent_level = _urgent_level     # low(0), mid(1), high(2)
+        
+    def __str__(self):
+        return 'Current journey Summary \n' \
+        + 'distance = {}\n'.format(self.distance) \
+        + 'time_available = {}\n'.format(self.time_available) \
+        + 'urgent_level = {}\n'.format(self.urgent_level) 
+     
+class transportation:
+    '''This class is for a type of transportation'''
+    def __init__(self, _name, _price, _comfort_level, _availability, _accessability, _safety):
+        self.name = _name                   # "car", "bus", "walk", "uber", "train", "bike"
+        self.price =_price                  # low(0), mid(1), high(2)
+        self.comfort_level = _comfort_level # low(0), mid(1), high(2)
+        self.availability = _availability   # True False
+        self.accessability = _accessability # True False
+        self.safety = _safety               # low(0), mid(1), high(2)
+        self.score = 0                 # integer to represent score for a type of transportation, higher score means higher probability to be chosen by agent 
+    
+    def __lt__(self, other):
+        """intentionally reverse the inequality for the priority queue use"""
+        return (self.score > other.score)
+
+    def __str__(self):
+        return 'type of transportation = {}\n'.format(self.name) \
+        + 'price = {}\n'.format(self.price) \
+        + 'comfort_level = {}\n'.format(self.comfort_level) \
+        + 'availability = {}\n'.format(self.availability) \
+        + 'accessability = {}\n'.format(self.accessability) \
+        + 'safety = {}\n'.format(self.safety)
+                       
+class rule:
+    '''This class if for a rule. Each rules has different condtions.'''
+    def __init__(self, _ID, _health_level, _has_car, _has_bike, _finance_level,\
+    _weather, _time_of_day,\
+    _distance, _time_available, _urgent_level,\
+    _car_score_change, _bus_score_change, _walk_score_change, _uber_score_change, _train_score_change, _bike_score_change):
+        # conditions where the rule is fired"""
+        self.ID = _ID
+        self.health_level = _health_level
+        self.has_car = _has_car
+        self.has_bike = _has_bike
+        self.finance_level = _finance_level
+        self.weather = _weather
+        self.time_of_day = _time_of_day
+        self.distance = _distance
+        self.time_available = _time_available
+        self.urgent_level = _urgent_level
+        self.num_condi = 0
+        self.score = 0
+        
+        # changes by the rule fired
+        self.car_score_change = _car_score_change
+        self.bus_score_change = _bus_score_change
+        self.walk_score_change = _walk_score_change
+        self.uber_score_change = _uber_score_change
+        self.train_score_change = _train_score_change
+        self.bike_score_change = _bike_score_change
+    
+        # compute number of conditions
+        if _health_level != None:
+            self.num_condi = self.num_condi + 1
+        if _has_car != None:
+            self.num_condi = self.num_condi + 1
+        if _has_bike != None:
+            self.num_condi = self.num_condi + 1
+        if _finance_level != None:
+            self.num_condi = self.num_condi + 1
+        if _weather != None:
+            self.num_condi = self.num_condi + 1
+        if _time_of_day != None:
+            self.num_condi = self.num_condi + 1
+        if _distance != None:
+            self.num_condi = self.num_condi + 1
+        if _time_available != None:
+            self.num_condi = self.num_condi + 1
+        if _urgent_level != None:
+            self.num_condi = self.num_condi + 1
+        
+    def computeScore(self, _curr_agent, _curr_env, _curr_journey):
+        '''Compute how many conditions are statisfied based on "state" and "environment"'''
         score = 0
-        if self.opinion != None and self.opinion == status.opinion:
+        # conditions related to agent
+        if self.health_level != None and self.health_level == _curr_agent.health_level:
             score += 1
-        if self.cLevel != None and self.cLevel == status.cLevel:
+        if self.has_car != None and self.has_car == _curr_agent.has_car:
             score += 1
-        if self.aLevel != None and self.aLevel == status.aLevel:
+        if self.has_bike != None and self.has_bike == _curr_agent.has_bike:
             score += 1
-        if self.iLevel != None and self.iLevel == status.iLevel:
+        if self.finance_level != None and self.finance_level == _curr_agent.finance_level:
             score += 1
-        if self.q1 != None and self.q1 == env.q1:
+        
+        # conditions related to environment
+        if self.weather != None and self.weather == _curr_env.weather:
             score += 1
-        if self.q2 != None and self.q2 == env.q2:
+        if self.time_of_day != None and self.time_of_day == _curr_env.time_of_day:
             score += 1
-        if self.q3 != None and self.q3 == env.q3:
+            
+        # conditions related to journey
+        if self.distance != None and self.distance == _curr_journey.distance:
             score += 1
-        if self.q4 != None and self.q4 == env.q4:
+        if self.time_available != None and self.time_available == _curr_journey.time_available:
             score += 1
-        if self.q5 != None and self.q5 == env.q5:
+        if self.urgent_level != None and self.urgent_level == _curr_journey.urgent_level:
             score += 1
+        
+        # update the score which is the number of conditions satisfied
         self.score = score
     
     def __lt__(self, other):
@@ -131,242 +150,108 @@ class rule:
     def __str__(self):
         return 'Rule {} Summary \n'.format(self.ID) \
         + 'This rule is fired if \n' \
-        + 'opinion = {}\n'.format(self.opinion) \
-        + 'confidence level = {}\n'.format(self.cLevel) \
-        + 'attention level = {}\n'.format(self.aLevel) \
-        + 'interset level = {}\n'.format(self.iLevel) \
-        + 'answer of q1 = {}\n'.format(self.q1) \
-        + 'answer of q2 = {}\n'.format(self.q2) \
-        + 'answer of q3 = {}\n'.format(self.q3) \
-        + 'answer of q4 = {}\n'.format(self.q4) \
-        + 'answer of q5 = {}\n'.format(self.q5) \
-        + 'oRate = {}\n'.format(self.oRate)\
-        + 'cRate = {}\n'.format(self.cRate)\
-        + 'aRate = {}\n'.format(self.aRate)\
-        + 'iRate = {}\n'.format(self.iRate)\
-        + 'score = {}\n'.format(self.score)\
-        + 'isUsed = {}\n'.format(self.isUsed)
+        + 'health_level = {}\n'.format(self.health_level) \
+        + 'has_car = {}\n'.format(self.has_car) \
+        + 'has_bike = {}\n'.format(self.has_bike) \
+        + 'finance_level = {}\n'.format(self.finance_level) \
+        + 'weather = {}\n'.format(self.weather) \
+        + 'time_of_day = {}\n'.format(self.time_of_day) \
+        + 'distance = {}\n'.format(self.distance) \
+        + 'time_available = {}\n'.format(self.time_available) \
+        + 'urgetnt_level = {}\n'.format(self.urgetnt_level) \
+        + 'score = {}\n'.format(self.score)
+    
+def update_score(rule, bus, car):
+    if rule.car_score_change != None:
+        car.score = car.score + rule.car_score_change
+    if rule.bus_score_change != None:
+        bus.score = bus.score + rule.bus_score_change
+    #walk.score = walk.score + rule.walk_score_change
+    #uber.score = uber.score + rule.uber_score_change
+    #train.score = train.score + rule.train_score_change
+    #bike.score = bike.score + rule.bike_score_change
+
+def best_transportation(bus, car):
+    transportations = queue.PriorityQueue()
+    transportations.put(bus)
+    transportations.put(car)
+    return transportations.get().name
     
 def main():
-    '''
-    Note:
-        This is the main function to be run
-    '''
-    num_rules = 95
-    rule_data = pd.read_excel(r'Rules.xlsx', sheetname='Final')
-    #rule_data = pd.read_excel(r'C:\Users\kamet\Dropbox (GaTech)\Summer 2018\CS 6795\Project1\CS6795-project1\Rules.xlsx', sheetname='Final')
+    '''Main function to be run'''
+
+    '''create transportation objects'''
+    # create bus object
+    bus_q1 = input('Is bus available for you now? (True, False) : ')
+    bus_q2 = input('Is bus accessible for you now? (True, False) : ')
+    bus_q3 = input('How safe is using a bus for you? (0 for low, 1 for mid, 2 for high) : ')
+    bus = transportation("bus", 1, 1, int(bus_q1), int(bus_q2), int(bus_q3))
+    
+    # create bus object
+    car_q1 = input('Is car available for you now? (True, False) : ')
+    car_q2 = input('Is car accessible for you now? (True, False) : ')
+    car_q3 = input('How safe is using a car for you? (0 for low, 1 for mid, 2 for high) : ')
+    car = transportation('car', 2, 2, int(car_q1), int(car_q2), int(car_q3))
+    
+    # create walk object
+    # create uber object
+    # create train object
+    # create bike object
+    
+    '''create other objects'''
+    # create agent object
+    agent_q1 = input('How is your health condition? (0 for low, 1 for mid, 2 for high) : ')
+    agent_q2 = input('How is your financial condition? (0 for low, 1 for mid, 2 for high) : ')
+    agent_q3 = input('Do you have a car? (0 for No, 1 for Yes) : ')
+    agent_q4 = input('Do you have a bike? (0 for No, 1 for Yes) : ')
+    curr_agent = agent(int(agent_q1), int(agent_q2), int(agent_q3), int(agent_q4))
+    
+    # create environment object
+    env_q1 = input('How is the weather now? (0 for bad, 1 for so so, 2 for good) : ')
+    env_q2 = input('How bad is the traffic? (0 for bad, 1 for so so, 2 for good) : ')
+    curr_env = env(int(env_q1), int(env_q2))
+    
+    # create journey object
+    journey_q1 = input('How far is your distination? (0 for close, 1 for midium, 2 for far away) : ')
+    journey_q2 = input('How much time is available for you? (0 for short, 1 for mid, 2 for long) : ')
+    journey_q3 = input('How urgent is this journey for you? (0 for No, 1 for just so so, 2 for yes) : ')
+    curr_journey = journey(int(journey_q1), int(journey_q2), int(journey_q3))
+    
+    '''create a set of rules based on excel (TO DO)'''
+    num_rules = 8
+    rule_data = pd.read_excel(r'rules.xlsx', sheet_name='Final')
     rule_data = rule_data.where((pd.notnull(rule_data)), None)
-    rule_data = rule_data.as_matrix()
+    rule_data = rule_data.as_matrix() # matrix which has rule data 
     
     rules = queue.PriorityQueue()
-    
-    q1 = input('q1. Does the article have a bias? (yes, no, cantSay) : ')
-    q2 = input('q2. Which comments did you read? (all, sortedByLikes, sampledBothSidesOfArgument, unsorted, never) : ')
-    q3 = input('q3. Are the comments offensive? (notAtAll, little, neutral, quite, very) : ')
-    q4 = input('q4. Which way is the comment section leaning (stronglyAgainstYou, againstYou, neutral, withYou, stronglyWithYou) : ')
-    q5 = input('q5. Are the comments well reasoned ? (notAtAll, little, neutral, quite, very) : ')
-    #currEnv = env('no', 'all', 'notAtAll', 'stronglyAgainstYou', 'very')
-    currEnv = env(q1, q2, q3, q4, q5)
-    
-    opinion = input('q6. input opinion : ')
-    confidence_level = input('q7. input confidence_level : ')
-    attention_level = input('q8. input attention_level : ')
-    interest_level = input('q9. input interest_level : ')
-    currStatus = status(int(confidence_level), int(attention_level), int(interest_level), int(opinion))
-    
     for i in range(0,num_rules):
-        '''
-        Construc a set of rules
-        '''
         curr_rule = rule(rule_data[i][0], rule_data[i][1], rule_data[i][2], \
         rule_data[i][3], rule_data[i][4], rule_data[i][5], rule_data[i][6], \
         rule_data[i][7], rule_data[i][8], rule_data[i][9], rule_data[i][10], \
-        rule_data[i][11], rule_data[i][12], rule_data[i][13])
-        curr_rule.computeScore(currStatus, currEnv)
+        rule_data[i][11], rule_data[i][12], rule_data[i][13], rule_data[i][14], rule_data[i][15])
+        curr_rule.computeScore(curr_agent, curr_env, curr_journey)
         rules.put(curr_rule)
 
+    '''while loop to fire rules with use of priority queue'''
     while not rules.empty():
-        '''
-        Iterate until there is no rule whose conditions are satisfied by the current state and environment
-        '''
+        '''Iterate until there is no rule whose conditions are satisfied by the current agent, environment, and journey'''
         curr_rule = rules.get()
-        if curr_rule.score != curr_rule.numCond:
+        if curr_rule.score != curr_rule.num_condi:
             break
-        curr_rule.isUsed = True
         print('Rule {} fired now in priority queue'.format(curr_rule.ID))
-        print(curr_rule)
-        currStatus.change(curr_rule)
-        print(currStatus)
-        tmp_rules = queue.PriorityQueue()
-        #print("Remaining Rules in priority queue \n")
-        while not rules.empty():
-            tmp_rule = rules.get()
-            #print(tmp_rule)
-            tmp_rule.computeScore(currStatus, currEnv)
-            tmp_rules.put(tmp_rule)
-        rules = tmp_rules
+        update_score(curr_rule, bus, car)
         
-    return currStatus.check()
-    
-def runCase(rule_data, num_rules, currEnv, currStatus, debug):
-    '''
-    Input :
-        rule_data = info of rules
-        num_rules = total number of rules in rule_data
-        currEnv = current environment 
-        currStatus = current state of a person 
-        debug = True is for debug mode
-    Output:
-        return "Opinion Changed!" or "Stick to the original opinion..." based on whether a person changes his or her opinion
-    Note:
-        This function is for runCases() to test large number of cases.
-    '''
-    rules = queue.PriorityQueue()
-    
-    for i in range(0,num_rules):
-        curr_rule = rule(rule_data[i][0], rule_data[i][1], rule_data[i][2], \
-        rule_data[i][3], rule_data[i][4], rule_data[i][5], rule_data[i][6], \
-        rule_data[i][7], rule_data[i][8], rule_data[i][9], rule_data[i][10], \
-        rule_data[i][11], rule_data[i][12], rule_data[i][13])
-        curr_rule.computeScore(currStatus, currEnv)
-        rules.put(curr_rule)
-
-    while not rules.empty():
-        curr_rule = rules.get()
-        if curr_rule.score != curr_rule.numCond:
-            break
-        curr_rule.isUsed = True
-        currStatus.change(curr_rule)
+        # store all rules in a reverse priority queue except for ones already fired
         tmp_rules = queue.PriorityQueue()
         while not rules.empty():
             tmp_rule = rules.get()
-            tmp_rule.computeScore(currStatus, currEnv)
+            tmp_rule.computeScore(curr_agent, curr_env, curr_journey)
             tmp_rules.put(tmp_rule)
         rules = tmp_rules
-    return currStatus.check()
-    
-def runCases():
-    '''
-    All answer options for each question is listed as follows
-    q1 = ['yes', 'no', 'cantSay']
-    q2 = ['all', 'sortedByLikes', 'sampledBothSidesOfArgument', 'unsorted', 'never']
-    q3 = ['notAtAll', 'little', 'neutral', 'quite', 'very']
-    q4 = ['stronglyAgainstYou', 'againstYou', 'neutral', 'withYou', 'stronglyWithYou']
-    q5 = ['notAtAll', 'little', 'neutral', 'quite', 'very']
-    
-    but, based on our rules, people change their opinion only when 
-    q1 = ['no']
-    q3 = ['notAtAll']
-    q4 = ['againstYou','stronglyAgainstYou']
-    q5 = ['very']
-    Thus, these values for each variables are focused in the discussion
-    
-    This is the function to test a large number of cases.
-    Output:
-        return tuple of results which store environment and state data (before and after) of case where a person changes his or her opinion
-    '''
-    debug = True
-    
-    q1 = ['no']
-    q2 = ['all', 'sampledBothSidesOfArgument']
-    q3 = ['notAtAll']
-    q4 = ['againstYou','stronglyAgainstYou']
-    q5 = ['very']
-    
-    num_rules = 95
-    rule_data = pd.read_excel(r'Rules.xlsx', sheetname='Final')
-    #rule_data = pd.read_excel(r'C:\Users\kamet\Dropbox (GaTech)\Summer 2018\CS 6795\Project1\CS6795-project1\Rules.xlsx', sheetname='Final')
-    rule_data = rule_data.where((pd.notnull(rule_data)), None)
-    rule_data = rule_data.as_matrix()
-    
-    case_num = 0
-    change_case_num = 0
-    result_before = []
-    result_after = []
-    for opinion in range(-2,3):
-        for confidence_level in range(0,3):
-            for attention_level in range (0,3):
-                for interest_level in range (0,3):
-                    for q1_answer in q1:
-                        for q2_answer in q2:
-                            for q3_answer in q3:
-                                for q4_answer in q4:
-                                    for q5_answer in q5:
-                                        initEnv = env(q1_answer, q2_answer, q3_answer, q4_answer, q5_answer)
-                                        currEnv = env(q1_answer, q2_answer, q3_answer, q4_answer, q5_answer)
-                                        initStatus = status(confidence_level, attention_level, interest_level, opinion)
-                                        currStatus = status(confidence_level, attention_level, interest_level, opinion)
-                                        if runCase(rule_data, num_rules, currEnv, currStatus, debug) == "Opinion Changed!":
-                                            print('case_num = {}, condition = {} {} {} {} {} {} {} {} {}'.format(case_num, opinion, confidence_level, attention_level, interest_level, q1_answer,q2_answer,q3_answer,q4_answer,q5_answer))
-                                            change_case_num += 1
-                                            result_before.append([initEnv, initStatus])
-                                            result_after.append([currEnv, currStatus])
-                                        case_num += 1
-    print('total # of cases = {}, cases when a person changes an opinion = {}'.format(case_num, change_case_num))                
-    return (result_before, result_after) 
-    
-def sort(result, sortType, beforeAfter):
-    '''
-    This function is used to show the data sorted by 
-    Input:
-        result = result from runCases()
-        sortType = "opinion" or "confidence_level" or "attention_level" or "interest_level" based on which result you care about
-        beforeAfter = "before" or "after" based on which result you care about
-    '''
-    if beforeAfter == 'before':
-        currResult = result[0]
-    else:
-        currResult = result[1]
-    
-    lowCount, midCount, highCount = 0, 0, 0
-    strDisagrCount, disagrCount, neutralCount, agrCount, strAgrCount =0, 0, 0, 0, 0
-    if sortType == 'confidence_level':
-        for res in currResult:
-            #print(res[1])
-            if res[1].cLevel == 0:
-                lowCount += 1
-            elif res[1].cLevel == 1:
-                midCount += 1
-            elif res[1].cLevel == 2:
-                highCount += 1
-        print('Summary\n lowCount = {}, midCount = {}, highCount = {}'.format(lowCount, midCount, highCount))
-    if sortType == 'attention_level':
-        for res in currResult:
-            if res[1].aLevel == 0:
-                lowCount += 1
-            elif res[1].aLevel == 1:
-                midCount += 1
-            elif res[1].aLevel == 2:
-                highCount += 1
-        print('Summary\n lowCount = {}, midCount = {}, highCount = {}'.format(lowCount, midCount, highCount))
-    if sortType == 'interest_level':
-        for res in currResult:
-            if res[1].iLevel == 0:
-                lowCount += 1
-            elif res[1].iLevel == 1:
-                midCount += 1
-            elif res[1].iLevel == 2:
-                highCount += 1
-        print('Summary\n lowCount = {}, midCount = {}, highCount = {}'.format(lowCount, midCount, highCount))
-    if sortType == 'opinion':
-        for res in currResult:
-            if res[1].opinion == -2:
-                strDisagrCount +=1
-            elif res[1].opinion == -1:
-                disagrCount +=1
-            elif res[1].opinion == 0:
-                neutralCount +=1
-            elif res[1].opinion == 1:
-                agrCount +=1
-            elif res[1].opinion == 2:
-                strAgrCount +=1
-        print('Summary\n strDisagrCount = {}, disagrCount = {}, neutralCount = {}, agrCount = {}, strAgrCount = {}'.format(strDisagrCount, disagrCount, neutralCount, agrCount, strAgrCount))      
-              
         
+    return best_transportation(car, bus)
+    
 if __name__ == "__main__":
-    isOpinionChanged = main()
-    print(isOpinionChanged)
-    # If you want to run all the cases I used in the report take out the comment-out sign below 
-    #result = runCases()  
-
+    agent_transportation_pick = main()
+    print(agent_transportation_pick)
 
