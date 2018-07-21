@@ -9,9 +9,10 @@ class agent:
         self.finance_level = _finance_level # low(0), mid(1), high(2)
         self.rules = []
 
-    def fire_rules(self, curr_env, curr_journey, car, walk):
-        while condition of rule matches variables in curr_env, curr_journey, car, ....:
-            fire the rule
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+        for rule in self.rules:
+            if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
         
         
     def __str__(self):
@@ -25,7 +26,13 @@ class env:
         self.weather = _weather # bad(0), so so(1), good(2) *bad means you travel in a bad weather like rainy
         self.isRushHour = _isRushHour # No(0), Yes(1) whether now is in rush hour or not 
         self.isNight = _isNight # No(0), Yes(1) whether now is night or not 
-        
+        self.rules = []
+
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+        for rule in self.rules:
+            if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
+
     def __str__(self):
         return 'Current enviroment Summary \n' \
         + 'weather = {}\n'.format(self.weather) \
@@ -39,7 +46,13 @@ class journey:
         self.distance =_distance              # short(0), mid(1), long(2)
         self.time_available = _time_available # short(0), mid(1), long(2)
         self.importance_level = _importance_level # low(0), mid(1), high(2)
-        
+        self.rules = []
+
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+        for rule in self.rules:
+            if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
+
     def __str__(self):
         return 'Current journey Summary \n' \
         + 'distance = {}\n'.format(self.distance) \
@@ -55,7 +68,13 @@ class transportation:
         self.availability = _availability   # True False
         self.accessability = _accessability # True False
         self.safety = _safety               # low(0), mid(1), high(2)
-
+        self.rules = []
+    
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+        for rule in self.rules:
+            if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
+    
     def __str__(self):
         return 'type of transportation = {}\n'.format(self.name) \
         + 'price = {}\n'.format(self.price) \
@@ -95,55 +114,34 @@ class rule:
         self.distance = _distance
         self.time_available = _time_available
         self.importance_level = _importance_level
+        
         self.car_price = _car_price
         self.car_comfort_level = _car_comfort_level
         self.car_availability = _car_availability
         self.car_accessability = _car_accessability
         self.car_safety	= _car_safety
-        # self.bus_price
-        # self.bus_comfort_level
-        # self.bus_availability
-        # self.bus_accessability
-        # self.bus_safety
+        
         self.walk_price = _walk_price
         self.walk_comfort_level = _walk_comfort_level
         self.walk_availability = _walk_availability
         self.walk_accessability = _walk_accessability
         self.walk_safety = _walk_safety
-        # self.uber_price
-        # self.uber_comfort_level
-        # self.uber_availability
-        # self.uber_accessability
-        # self.uber_safety
-        # self.train_price
-        # self.train_comfort_level
-        # self.train_availability
-        # self.train_accessability
-        # self.train_safety
-        # self.bike_price
-        # self.bike_comfort_level
-        # self.bike_availability
-        # self.bike_accessability
-        # self.bike_safety
-
+        
         self.rate_car_price = _rate_car_price
         self.rate_car_comfort_level = _rate_car_comfort_level
         self.rate_car_availability = _rate_car_availability
         self.rate_car_accessability = _rate_car_accessability
         self.rate_car_safety	= _rate_car_safety
-        # self.rate_bus_price
-        # self.rate_bus_comfort_level
-        # self.rate_bus_availability
-        # self.rate_bus_accessability
-        # self.rate_bus_safety
+        
         self.rate_walk_price = _rate_walk_price
         self.rate_walk_comfort_level = _rate_walk_comfort_level
         self.rate_walk_availability = _rate_walk_availability
         self.rate_walk_accessability = _rate_walk_accessability
         self.rate_walk_safety = _rate_walk_safety
+        
         self.car_eliminate = _car_eliminate
         self.walk_elinimate = _walk_eliminate
-
+        
         # compute number of conditions(TODO)
         
 
@@ -213,7 +211,17 @@ def best_transportation(bus, car):
     transportations.put(bus)
     transportations.put(car)
     return transportations.get().name
-    
+
+def distribute_rules(rule_data, curr_agent, curr_env, curr_journey, car, walk) :
+    for rule in rule_data:
+        if location_to_be_fired == "agent":
+            curr_agent.rules.append(rule)
+        if location_to_be_fired == "env":
+            curr_env.rules.append(rule)
+        if location_to_be_fired == "journey":
+            curr_journey.rules.append(rule)
+        
+
 def main():
     input_data = pd.read_excel(r'input_test.xlsx')
     input_data = input_data.where((pd.notnull(input_data)), None)
