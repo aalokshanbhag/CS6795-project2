@@ -4,21 +4,22 @@ import pandas as pd
 
 class agent:
     '''This class is for an agent's state'''
-    def __init__(self, _health_level, _finance_level, _has_car, _has_bike):
+    def __init__(self, _health_level, _finance_level):
         self.health_level = _health_level # low(0), mid(1), high(2)
         self.finance_level = _finance_level # low(0), mid(1), high(2)
+        self.emotion = "great" # "great", "ok", "horrible"
         self.rules = []
 
-    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, candidate_transportations):
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
-                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
-        
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)
         
     def __str__(self):
         return 'Current agent State Summary \n' \
         + 'health_level = {}\n'.format(self.health_level) \
-        + 'finance_level = {}\n'.format(self.finance_level)
+        + 'finance_level = {}\n'.format(self.finance_level) \
+        + 'emotion = {}\n'.format(self.emotion) \
     
 class env:
     '''This class is for an enviroment factors'''
@@ -28,10 +29,10 @@ class env:
         self.isNight = _isNight # No(0), Yes(1) whether now is night or not 
         self.rules = []
 
-    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, candidate_transportations):
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
-                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)
 
     def __str__(self):
         return 'Current enviroment Summary \n' \
@@ -48,10 +49,10 @@ class journey:
         self.importance_level = _importance_level # low(0), mid(1), high(2)
         self.rules = []
 
-    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, candidate_transportations):
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
-                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)
 
     def __str__(self):
         return 'Current journey Summary \n' \
@@ -70,10 +71,10 @@ class transportation:
         self.safety = _safety               # low(0), mid(1), high(2)
         self.rules = []
     
-    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk):
+    def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, candidate_transportations):
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk):
-                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk)
+                rule.fire_rule(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)
     
     def __str__(self):
         return 'type of transportation = {}\n'.format(self.name) \
@@ -89,21 +90,20 @@ class rule:
     _weather, _isRushHour, _isNight,\
     _distance, _time_available, _importance_level,\
     _car_price, _car_comfort_level, _car_availability, _car_accessability, _car_safety,\
-    _bus_price, _bus_comfort_level, _bus_availability, _bus_accessability, _bus_safety,\
     _walk_price, _walk_comfort_level, _walk_availability, _walk_accessability, _walk_safety,\
-    _uber_price, _uber_comfort_level, _uber_availability, _uber_accessability, _uber_safety,\
-    _train_price, _train_comfort_level, _train_availability, _train_accessability, _train_safety,\
-    _bike_price, _bike_comfort_level, _bike_availability, _bike_accessability, _bike_safety,\
-    _rate_health_level, _rate_finance_level,\
-    _rate_weather, _rate_isRushHour, _rate_isNight,\
-    _rate_distance, _rate_time_available, _rate_importance_level,\
     _rate_car_price, _rate_car_comfort_level, _rate_car_availability, _rate_car_accessability, _rate_car_safety,\
-    _rate_bus_price, _rate_bus_comfort_level, _rate_bus_availability, _rate_bus_accessability, _rate_bus_safety,\
     _rate_walk_price, _rate_walk_comfort_level, _rate_walk_availability, _rate_walk_accessability, _rate_walk_safety,\
-    _rate_uber_price, _rate_uber_comfort_level, _rate_uber_availability, _rate_uber_accessability, _rate_uber_safety,\
-    _rate_train_price, _rate_train_comfort_level, _rate_train_availability, _rate_train_accessability, _rate_train_safety,\
-    _rate_bike_price, _rate_bike_comfort_level, _rate_bike_availability, _rate_bike_accessability, _rate_bike_safety,\
-    _car_eliminate, _walk_eliminate):
+    _car_eliminate, _walk_eliminate, _location_to_be_fired):
+        ''' for later use
+        _bus_price, _bus_comfort_level, _bus_availability, _bus_accessability, _bus_safety,\
+        _uber_price, _uber_comfort_level, _uber_availability, _uber_accessability, _uber_safety,\
+        _train_price, _train_comfort_level, _train_availability, _train_accessability, _train_safety,\
+        _bike_price, _bike_comfort_level, _bike_availability, _bike_accessability, _bike_safety,\
+        _rate_bus_price, _rate_bus_comfort_level, _rate_bus_availability, _rate_bus_accessability, _rate_bus_safety,\
+        _rate_uber_price, _rate_uber_comfort_level, _rate_uber_availability, _rate_uber_accessability, _rate_uber_safety,\
+        _rate_train_price, _rate_train_comfort_level, _rate_train_availability, _rate_train_accessability, _rate_train_safety,\
+        _rate_bike_price, _rate_bike_comfort_level, _rate_bike_availability, _rate_bike_accessability, _rate_bike_safety,\
+        '''
         # conditions where the rule is fired"""
         self.ID = _ID
         self.health_level = _health_level
@@ -141,9 +141,7 @@ class rule:
         
         self.car_eliminate = _car_eliminate
         self.walk_elinimate = _walk_eliminate
-        
-        # compute number of conditions(TODO)
-        
+        self.location_to_be_fired = _location_to_be_fired
 
     def isMatch(self, curr_agent, curr_env, curr_journey, car, walk):
         if self.health_level != None and self.health_level != curr_agent.health_level:
@@ -184,16 +182,20 @@ class rule:
             return False
         return True
 
-    def fire_rule(self, curr_agent, curr_env, curr_journey, car, walk):
+    def fire_rule(self, curr_agent, curr_env, curr_journey, car, walk, candidate_transportations):
         #Do not exceed 2 !!!!!!!!! -> future work
         if self.rate_car_comfort_level != None:
             car.comfort_level += self.rate_car_comfort_level
         if self.rate_car_availability != None:
-            liavavailability += self.rate_car_availability
+            car.avavailability += self.rate_car_availability
         if self.rate_walk_comfort_level != None:
             walk.comfort_level += self.rate_walk_comfort_level
         if self.rate_walk_availability != None:
             walk.availability += self.rate_walk_availability
+        if self.car_eliminate == 1:
+            eliminate_transportation("car", candidate_transportations)
+        if self.walk_elinimate == 1:
+            eliminate_transportation("walk", candidate_transportations)
 
     def __str__(self):
         return 'Rule {} Summary \n'.format(self.ID) \
@@ -203,106 +205,104 @@ class rule:
         + 'weather = {}\n'.format(self.weather) \
         + 'distance = {}\n'.format(self.distance) \
         + 'time_available = {}\n'.format(self.time_available) \
-        + 'urgetnt_level = {}\n'.format(self.urgetnt_level) \
+        + 'importance_level = {}\n'.format(self.importance_level) \
     
+def eliminate_transportation(transportation_name, candidate_transportations):
+    '''This is the fuction to remove a transportation from the candidate_transportations list'''
+    # transporatation_name is the name of the transportation you want to remove from the candidate list
+    for curr_can in candidate_transportations:
+        if curr_can.name == transportation_name:
+            candidate_transportations.pop(curr_can)
 
-def best_transportation(bus, car):
-    transportations = queue.PriorityQueue()
-    transportations.put(bus)
-    transportations.put(car)
-    return transportations.get().name
+def choose_best_transportation(candidate_transportations):
+    '''choose the best transportation among candidate_transportation list and store this trip as one experience into habit''' 
+    '''code for exception (TODO)'''
+    if len(candidate_transportations) == 2: # case where there are more than one transportation object in list
+        return candidate_transportations[0]
+    if len(candidate_transportations) == 0: # case where there is no transportation object in list
+        return candidate_transportations[0]
+    return candidate_transportations[0] # other wise
 
-def distribute_rules(rule_data, curr_agent, curr_env, curr_journey, car, walk) :
-    for rule in rule_data:
-        if location_to_be_fired == "agent":
-            curr_agent.rules.append(rule)
-        if location_to_be_fired == "env":
-            curr_env.rules.append(rule)
-        if location_to_be_fired == "journey":
-            curr_journey.rules.append(rule)
-        
+def distribute_rules(curr_rule, curr_agent, curr_env, curr_journey, car, walk) :
+    if curr_rule.location_to_be_fired == "agent":
+        curr_agent.rules.append(rule)
+    if curr_rule.location_to_be_fired == "env":
+        curr_env.rules.append(rule)
+    if curr_rule.location_to_be_fired == "journey":
+        curr_journey.rules.append(rule)
 
-def main():
-    input_data = pd.read_excel(r'input_test.xlsx')
-    input_data = input_data.where((pd.notnull(input_data)), None)
-    input_data = input_data.as_matrix() # matrix which has input data 
+def is_use_habit(habit, curr_agent, curr_env, curr_journey):
+    #[health_level, weather, isRushHour, isNight, time_available, urgetnt_level]
+    count  = 0
+    for experience in habit:
+        if abs(experience[0] - curr_agent.health_level) != 2 and abs(experience[1] - curr_env.weather) != 2 and abs(experience[2] - curr_env.isRushHour) != 2 and abs(experience[3] - curr_env.isNight) != 2 and abs(experience[4] - curr_journey.time_available) != 2 and abs(experience[5] - curr_journey.importance_level) != 2:
+            count += 1
+    if count > 2:
+        return True
+    return False        
+
+def run(input_data, habit):
+    '''create non-rule objects''' 
+    # create agent object
+    curr_agent = agent(input_data[1], input_data[2])
+    # create environment object
+    curr_env = env(input_data[3], input_data[4], input_data[5])
+    # create journey object
+    curr_journey = journey(input_data[6], input_data[7], input_data[8])
+
+    # create transportation objects
+    car = transportation('car', input_data[9], input_data[10], input_data[11], input_data[12],input_data[13])
+    walk = transportation('walk', input_data[14], input_data[15], input_data[16], input_data[17],input_data[18])
+
+    ''' list of candidate transportations'''
+    # list to store possible transportations
+    candidate_transportations = [car, walk]
     
-    #car_price = input_data[0][9]
-    car = transportation('car', input_data[0][9], input_data[0][10], _availability, _accessability, _safety):
-    
-
-
+    '''create a set of rules based on excel'''
+    # read rule data from excel files
     rule_data = pd.read_excel(r'rule_test.xlsx')
     rule_data = rule_data.where((pd.notnull(rule_data)), None)
     rule_data = rule_data.as_matrix() # matrix which has rule data 
-    
+    num_rules = 5 #NEEDS TO BE CHANGED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    
-    
-    
-    
-    car = transportation('car, _price, _comfort_level, _availability, _accessability, _safety):
-    transportations = []
-    '''Main function to be run'''
-
-    '''create transportation objects'''
-    # create bus object
-    bus_q1 = input('Is bus available for you now? (True, False) : ')
-    bus_q2 = input('Is bus accessible for you now? (True, False) : ')
-    bus_q3 = input('How safe is using a bus for you? (0 for low, 1 for mid, 2 for high) : ')
-    bus = transportation("bus", 1, 1, int(bus_q1), int(bus_q2), int(bus_q3))
-    
-    # create bus object
-    car_q1 = input('Is car available for you now? (True, False) : ')
-    car_q2 = input('Is car accessible for you now? (True, False) : ')
-    car_q3 = input('How safe is using a car for you? (0 for low, 1 for mid, 2 for high) : ')
-    car = transportation('car', 2, 2, int(car_q1), int(car_q2), int(car_q3))
-    
-    # create walk object
-    # create uber object
-    # create train object
-    # create bike object
-    
-    '''create other objects'''
-    # create agent object
-    curr_agent = agent(int(agent_q1), int(agent_q2), int(agent_q3), int(agent_q4))
-    
-    # create environment object
-    curr_env = env(int(env_q1), int(env_q2))
-    
-    # create journey object
-    curr_journey = journey(int(journey_q1), int(journey_q2), int(journey_q3))
-    
-    '''create a set of rules based on excel (TO DO)'''
-    
+    # create rule objects and distribute them accordingly 
     for i in range(0,num_rules):
         curr_rule = rule(rule_data[i][0], rule_data[i][1], rule_data[i][2], \
         rule_data[i][3], rule_data[i][4], rule_data[i][5], rule_data[i][6], \
         rule_data[i][7], rule_data[i][8], rule_data[i][9], rule_data[i][10], \
-        rule_data[i][11], rule_data[i][12], rule_data[i][13], rule_data[i][14], rule_data[i][15])
-        curr_rule.computeScore(curr_agent, curr_env, curr_journey)
-        rules.put(curr_rule)
-
-    '''while loop to fire rules with use of priority queue'''
-    while not rules.empty():
-        '''Iterate until there is no rule whose conditions are satisfied by the current agent, environment, and journey'''
-        curr_rule = rules.get()
-        if curr_rule.score != curr_rule.num_condi:
-            break
-        print('Rule {} fired now in priority queue'.format(curr_rule.ID))
-        update_score(curr_rule, bus, car)
+        rule_data[i][11], rule_data[i][12], rule_data[i][13], rule_data[i][14], \
+        rule_data[i][15], rule_data[i][16], rule_data[i][17], rule_data[i][18], \
+        rule_data[i][19], rule_data[i][20], rule_data[i][21], rule_data[i][22], \
+        rule_data[i][23], rule_data[i][24], rule_data[i][25], rule_data[i][26], \
+        rule_data[i][27], rule_data[i][28], rule_data[i][29], rule_data[i][30]) 
+        distribute_rules(curr_rule, curr_agent, curr_env, curr_journey, car, walk)
         
-        # store all rules in a reverse priority queue except for ones already fired
-        tmp_rules = queue.PriorityQueue()
-        while not rules.empty():
-            tmp_rule = rules.get()
-            tmp_rule.computeScore(curr_agent, curr_env, curr_journey)
-            tmp_rules.put(tmp_rule)
-        rules = tmp_rules
-        
-    return best_transportation(car, bus)
+    '''fire rules in the appropriate order discussed in the report'''    
+    if is_use_habit(habit, curr_agent, curr_env, curr_journey)[0] == True: # case where the agent can reduce the cognitive load by using habit to decide
+        result = is_use_habit(habit, curr_agent, curr_env, curr_journey)[1]
+    else: # case where habit does not work to decide the transportation so that the agent dive into the cognitive procedure
+        curr_agent.fire_rules(curr_agent, curr_env, curr_journey, car, walk)   #fire rules associated to agent
+        curr_journey.fire_rules(curr_agent, curr_env, curr_journey, car, walk) #fire rules associated to journey
+        curr_env.fire_rules(curr_agent, curr_env, curr_journey, car, walk)     #fire rules associated to env
+        car.fire_rules(curr_agent, curr_env, curr_journey, car, walk)          #fire rules associated to car
+        walk.fire_rules(curr_agent, curr_env, curr_journey, car, walk)         #fire rules associate to walk     
+        result = choose_best_transportation(candidate_transportations) # function to choose best transporttaion from candidate_transportations list  
+    exprience = [curr_agent.health_level, curr_env.weather, curr_env.isRushHour, curr_env.isNight, curr_journey.time_available, curr_journey.importance_level, emotion, result]
+    habit.append(experience)
     
-if __name__ == "__main__":
-    agent_transportation_pick = main()
-    print(agent_transportation_pick)
+def main():
+    '''Main function to be run'''
+    # read input data from excel files
+    input_data = pd.read_excel(r'input_test.xlsx')
+    input_data = input_data.where((pd.notnull(input_data)), None)
+    input_data = input_data.as_matrix() # matrix which has input data 
+    num_input_data = 20 # NEEDSTO BE CHANGED
 
+    # habit
+    habit = []
+    for i in range(0, num_input_data):
+        run(input_data[i], habit)
+    
+
+if __name__ == "__main__":
+    main()
