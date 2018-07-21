@@ -1,11 +1,11 @@
 # CS6795-project2
 Stimulation of human cognitive process to choose type of transportation in daily life
 
-## Contents
+This file has 
  - __init__.py which is the first version of the source code
  - Rules.xlsx which contains the rules in excel sheet
 
-## Executing Procedure
+Procedure\
 1, install pandas package if not installed yet
 
 2, run with the following command 
@@ -80,6 +80,6 @@ Stimulation of human cognitive process to choose type of transportation in daily
    
    In the example case above, the command line output "bus".
 
-### Note
+##Note
 Python3.4.2 is used for this project.\
 Git hub repository is "https://github.com/kameturtle/CS6795-project2"
