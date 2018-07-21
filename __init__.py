@@ -91,8 +91,8 @@ class rule:
     _distance, _time_available, _importance_level,\
     _car_price, _car_comfort_level, _car_availability, _car_accessability, _car_safety,\
     _walk_price, _walk_comfort_level, _walk_availability, _walk_accessability, _walk_safety,\
-    _rate_car_price, _rate_car_comfort_level, _rate_car_availability, _rate_car_accessability, _rate_car_safety,\
-    _rate_walk_price, _rate_walk_comfort_level, _rate_walk_availability, _rate_walk_accessability, _rate_walk_safety,\
+     _rate_car_comfort_level, _rate_car_availability, _rate_car_accessability, _rate_car_safety,\
+     _rate_walk_comfort_level, _rate_walk_availability, _rate_walk_accessability, _rate_walk_safety,\
     _car_eliminate, _walk_eliminate, _location_to_be_fired):
         ''' for later use
         _bus_price, _bus_comfort_level, _bus_availability, _bus_accessability, _bus_safety,\
@@ -127,13 +127,11 @@ class rule:
         self.walk_accessability = _walk_accessability
         self.walk_safety = _walk_safety
         
-        self.rate_car_price = _rate_car_price
         self.rate_car_comfort_level = _rate_car_comfort_level
         self.rate_car_availability = _rate_car_availability
         self.rate_car_accessability = _rate_car_accessability
         self.rate_car_safety	= _rate_car_safety
         
-        self.rate_walk_price = _rate_walk_price
         self.rate_walk_comfort_level = _rate_walk_comfort_level
         self.rate_walk_availability = _rate_walk_availability
         self.rate_walk_accessability = _rate_walk_accessability
@@ -146,7 +144,7 @@ class rule:
     def isMatch(self, curr_agent, curr_env, curr_journey, car, walk):
         if self.health_level != None and self.health_level != curr_agent.health_level:
             return False
-        if self.finance_level != None and self.finance_level = curr_agent.finance_level:
+        if self.finance_level != None and self.finance_level != curr_agent.finance_level:
             return False
         if self.weather != None and self.weather != curr_env.weather:
             return False
@@ -174,11 +172,11 @@ class rule:
             return False            
         if self.walk_comfort_level != None and self.walk_comfort_level != walk.comfort_level:
             return False
-        if self.walk_availability != None and self.walk_availability != _walk_availability:
+        if self.walk_availability != None and self.walk_availability != walk.availability:
             return False
-        if self.walk_accessability != None and self.walk_accessability != _walk_accessability:
+        if self.walk_accessability != None and self.walk_accessability != walk.accessability:
             return False
-        if self.walk_safety != None and self.walk_safety != _walk_safety:
+        if self.walk_safety != None and self.walk_safety != walk.safety:
             return False
         return True
 
@@ -232,14 +230,19 @@ def distribute_rules(curr_rule, curr_agent, curr_env, curr_journey, car, walk) :
         curr_journey.rules.append(rule)
 
 def is_use_habit(habit, curr_agent, curr_env, curr_journey):
-    #[health_level, weather, isRushHour, isNight, time_available, urgetnt_level]
+
+    #[health_level, weather, isRushHour, isNight, time_available, urgetnt_level, emotion, result]
+    habituated_transportation = None
     count  = 0
     for experience in habit:
         if abs(experience[0] - curr_agent.health_level) != 2 and abs(experience[1] - curr_env.weather) != 2 and abs(experience[2] - curr_env.isRushHour) != 2 and abs(experience[3] - curr_env.isNight) != 2 and abs(experience[4] - curr_journey.time_available) != 2 and abs(experience[5] - curr_journey.importance_level) != 2:
+            if experience[6] == "horrible": # case where agent re-consider the transportation because of horrible experience
+                return False, None
             count += 1
+            habituated_transportation = experience[7]
     if count > 2:
-        return True
-    return False        
+        return True, habituated_transportation
+    return False, None      
 
 def run(input_data, habit):
     '''create non-rule objects''' 
@@ -274,21 +277,24 @@ def run(input_data, habit):
         rule_data[i][15], rule_data[i][16], rule_data[i][17], rule_data[i][18], \
         rule_data[i][19], rule_data[i][20], rule_data[i][21], rule_data[i][22], \
         rule_data[i][23], rule_data[i][24], rule_data[i][25], rule_data[i][26], \
-        rule_data[i][27], rule_data[i][28], rule_data[i][29], rule_data[i][30]) 
+        rule_data[i][27], rule_data[i][28], rule_data[i][29]) 
         distribute_rules(curr_rule, curr_agent, curr_env, curr_journey, car, walk)
         
     '''fire rules in the appropriate order discussed in the report'''    
-    if is_use_habit(habit, curr_agent, curr_env, curr_journey)[0] == True: # case where the agent can reduce the cognitive load by using habit to decide
+    if is_use_habit(habit, curr_agent, curr_env, curr_journey)[0] == True and\
+     is_use_habit(habit, curr_agent, curr_env, curr_journey)[1].accessability == 1 and \
+     is_use_habit(habit, curr_agent, curr_env, curr_journey)[1].availability == 1: # case where the agent can reduce the cognitive load by using habit to decide
         result = is_use_habit(habit, curr_agent, curr_env, curr_journey)[1]
     else: # case where habit does not work to decide the transportation so that the agent dive into the cognitive procedure
-        curr_agent.fire_rules(curr_agent, curr_env, curr_journey, car, walk)   #fire rules associated to agent
-        curr_journey.fire_rules(curr_agent, curr_env, curr_journey, car, walk) #fire rules associated to journey
-        curr_env.fire_rules(curr_agent, curr_env, curr_journey, car, walk)     #fire rules associated to env
-        car.fire_rules(curr_agent, curr_env, curr_journey, car, walk)          #fire rules associated to car
-        walk.fire_rules(curr_agent, curr_env, curr_journey, car, walk)         #fire rules associate to walk     
+        curr_agent.fire_rules(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)   #fire rules associated to agent
+        curr_journey.fire_rules(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations) #fire rules associated to journey
+        curr_env.fire_rules(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)     #fire rules associated to env
+        car.fire_rules(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)          #fire rules associated to car
+        walk.fire_rules(curr_agent, curr_env, curr_journey, car, walk, candidate_transportations)         #fire rules associate to walk     
         result = choose_best_transportation(candidate_transportations) # function to choose best transporttaion from candidate_transportations list  
+    emotion = "great"
     exprience = [curr_agent.health_level, curr_env.weather, curr_env.isRushHour, curr_env.isNight, curr_journey.time_available, curr_journey.importance_level, emotion, result]
-    habit.append(experience)
+    habit.append(exprience)
     
 def main():
     '''Main function to be run'''
