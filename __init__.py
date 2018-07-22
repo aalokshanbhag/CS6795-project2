@@ -296,33 +296,57 @@ class rule:
         #Do not exceed 2 !!!!!!!!! -> future work
         if self.rate_car_comfort_level != None:
             car.comfort_level += self.rate_car_comfort_level
+            if 0 > car.comfort_level: car.comfort_level = 0 
+            if 2 < car.comfort_level: car.comfort_level = 2 
         if self.rate_car_availability != None:
             car.availability += self.rate_car_availability
-        
+            if 0 > car.availability: car.availability = 0 
+            if 1 < car.availability: car.availability = 1 
+            
         if self.rate_walk_comfort_level != None:
             walk.comfort_level += self.rate_walk_comfort_level
+            if 0 > walk.comfort_level: walk.comfort_level = 0 
+            if 2 < walk.comfort_level: walk.comfort_level = 2 
         if self.rate_walk_availability != None:
             walk.availability += self.rate_walk_availability
-        
+            if 0 > walk.availability: walk.availability = 0 
+            if 1 < walk.availability: walk.availability = 1 
+            
         if self.rate_bus_comfort_level != None:
             bus.comfort_level += self.rate_bus_comfort_level
+            if 0 > bus.comfort_level: bus.comfort_level = 0 
+            if 2 < bus.comfort_level: bus.comfort_level = 2 
         if self.rate_bus_availability != None:
             bus.availability += self.rate_bus_availability
+            if 0 > bus.availability: bus.availability = 0 
+            if 1 < bus.availability: bus.availability = 1 
             
         if self.rate_uber_comfort_level != None:
             uber.comfort_level += self.rate_uber_comfort_level
+            if 0 > uber.comfort_level: uber.comfort_level = 0 
+            if 2 < uber.comfort_level: uber.comfort_level = 2 
         if self.rate_uber_availability != None:
             uber.availability += self.rate_uber_availability
+            if 0 > uber.availability: uber.availability = 0 
+            if 1 < uber.availability: uber.availability = 1 
             
         if self.rate_train_comfort_level != None:
             train.comfort_level += self.rate_train_comfort_level
+            if 0 > train.comfort_level: train.comfort_level = 0 
+            if 2 < train.comfort_level: train.comfort_level = 2 
         if self.rate_train_availability != None:
             train.availability += self.rate_train_availability
+            if 0 > train.availability: train.availability = 0 
+            if 1 < train.availability: train.availability = 1 
             
         if self.rate_bike_comfort_level != None:
             bike.comfort_level += self.rate_bike_comfort_level
+            if 0 > bike.comfort_level: bike.comfort_level = 0 
+            if 2 < bike.comfort_level: bike.comfort_level = 2 
         if self.rate_bike_availability != None:
             bike.availability += self.rate_bike_availability
+            if 0 > bike.availability: bike.availability = 0 
+            if 1 < bike.availability: bike.availability = 1 
             
         if self.car_eliminate == 1:
             print('  - delete car')
@@ -546,7 +570,9 @@ def run(input_data, curr_habit):
     curr_experience = experience(curr_agent, curr_env, curr_journey, None)
     print('current status is as follows \n{}'.format(curr_experience.str()))
     
-    if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True:
+    if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
+     is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].accessability == 1 and \
+     is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].availability == 1:
         curr_explanation.add_explanation("Habit is being used to decide the transportation.\n")
         print('habit is being used to decide the transportation')
     else:
@@ -579,7 +605,7 @@ def run(input_data, curr_habit):
     curr_experience = experience(curr_agent, curr_env, curr_journey, result)
     curr_habit.add_experience(curr_experience)
     
-    print(curr_explanation)
+    #print(curr_explanation)
     
 def main():
     '''Main function to be run'''
