@@ -418,69 +418,12 @@ class experience:
         + 'emotion = {}\n'.format(self.emotion)\
         + 'result = {}\n'.format(self.result.name)
     
-    def __eq__(self, other):
-        if (self.health_level == other.health_level or (self.health_level != 2 and other.health_level != 2)) and \
-        (self.weather == other.weather or (self.weather != 2 and other.weather != 2)) and \
-        self.isRushHour == other.isRushHour and self.isNight == other.isNight and \
-        (self.time_available == other.time_available or (self.time_available != 2 and other.time_available != 2)) and\
-        (self.importance_level == other.importance_level or (self.importance_level != 2 and other.importance_level != 2)):
-            return True
-        return False
-    
 class habit:
     def __init__(self):
         self.experiences = []
         
     def add_experience(self, experience):
         self.experiences.append(experience)
-    def extract(self):
-        curr_total = 0
-        extracted_habit ={} #dictionary storing['habit_i': experience obj, number of appearance]
-        for curr_exp in self.experiences:
-            is_curr_exp_found = False
-            for key in extracted_habit:
-                if extracted_habit[key][0] == curr_exp:
-                    extracted_habit[key][0] = curr_exp
-                    extracted_habit[key][1] += 1
-                    is_curr_exp_found = True
-            if is_curr_exp_found == False:
-                extracted_habit['habit_{}'.format(curr_total)] = [curr_exp, 1]
-                curr_total += 1
-        res = ""
-        for key in extracted_habit:
-            if extracted_habit[key][1] > 3:
-                res += '{} is if '.format(key,)
-                curr_habit = extracted_habit[key][0]
-                if curr_habit.health_level != 2:
-                    res +='the agent is not sick and '
-                else:
-                    res +='the agent is sick and '
-                if curr_habit.weather != 2:
-                    res +='the weather is not extremely bad and'
-                else:
-                    res +='the weather is extremely bad and'  
-                if curr_habit.isRushHour!= 1:
-                    res +='now is not in rush hour '
-                else:
-                    res +='now is in rush hour '
-                if curr_habit.isNight!= 1:
-                    res +='now is not at night, '
-                else:
-                    res +='now is at night, '  
-                if curr_habit.time_available != 0:
-                    res +='the agent has a lot of time to get a destination, '
-                else:
-                    res +='the agent does not have a lot of time to get a destination, '
-                if curr_habit.importance_level != 2:
-                    res +='the trip is really not really in a hurry, '
-                else:
-                    res +='the agent is really in a hurry, '
-                if curr_habit.emotion != "horrible":
-                    res +='the agents posttrip emotion is great, '
-                else:
-                    res +='the agents posttrip emotion is horrible, '
-                res += 'then the agent uses {} for the trip \n'.format(curr_habit.result.name)
-        return res
         
     def __str__(self):
         print_return = 'current habit is as folllows \n'
@@ -687,8 +630,6 @@ def main():
     for i in range(0, num_input_data):
         print('{}-th travel'.format(i+1))
         print(curr_habit)
-        print('extracted habit')
-        print(curr_habit.extract())
         run(input_data[i], curr_habit)
         print('\n')
 
