@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 import sys
 import queue as queue
 import pandas as pd
 import random
-import operator
 
 '''ToDO
 1, explanation
@@ -437,35 +435,23 @@ class habit:
         
     def add_experience(self, experience):
         self.experiences.append(experience)
+        
     def extract(self):
         curr_total = 0
-        extracted_habit ={} #dictionary storing[‘habit_i’: experience obj, number of appearance]
-        count_typeOfOption = {}
+        extracted_habit ={} #dictionary storing['habit_i': experience obj, number of appearance]
         for curr_exp in self.experiences:
             is_curr_exp_found = False
             for key in extracted_habit:
                 if extracted_habit[key][0] == curr_exp:
-                    if curr_exp.emotion == 'horrible':
+                    if curr_exp.emotion == "horrible":
                         extracted_habit[key][1] -= 999
-                    # this part should be changed
-                    if curr_exp.result.name in count_typeOfOption['habit_{}'.format(curr_total)]:
-                        count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] += 1
-                    else:
-                        count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] = 1
-                    #return the name of transportation.
-                    resultTransportation = max(count_typeOfOption['habit_{}'.format(curr_total)].iteritems(), key=operator.itemgetter(1))[0]
-                    curr_exp.result.name = resultTransportation
                     extracted_habit[key][0] = curr_exp
                     extracted_habit[key][1] += 1
                     is_curr_exp_found = True
             if is_curr_exp_found == False:
                 extracted_habit['habit_{}'.format(curr_total)] = [curr_exp, 1]
-                count_typeOfOption['habit_{}'.format(curr_total)] = {}
-                count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] = 1
                 curr_total += 1
-                 
-        res = 'Habits from the experiences are as follows.\n'
-        
+        res = "Habits from the experiences are as follows.\n"
         for key in extracted_habit:
             if extracted_habit[key][1] > 3:
                 res += '{} is If '.format(key,)
@@ -499,7 +485,6 @@ class habit:
                 else:
                     res +='the agents posttrip emotion is horrible, '
                 res += 'Then the agent uses {} for the trip! \n'.format(curr_habit.result.name)
-
         return res
         
     def __str__(self):
@@ -826,7 +811,7 @@ def main():
     input_data = pd.read_excel(r'input_modified.xlsx')
     input_data = input_data.where((pd.notnull(input_data)), None)
     input_data = input_data.as_matrix() # matrix which has input data 
-    num_input_data = 47 # 47 NEEDSTO BE CHANGED
+    num_input_data = 1 # 47 NEEDSTO BE CHANGED
 
     # habit
     curr_habit = habit()
