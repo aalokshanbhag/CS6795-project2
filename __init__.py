@@ -433,8 +433,7 @@ class experience:
     
 class habit:
     def __init__(self):
-        self.experiences = []
-        
+        self.experiences = []  
     def add_experience(self, experience):
         self.experiences.append(experience)
     def extract(self):
@@ -448,12 +447,16 @@ class habit:
                     if curr_exp.emotion == 'horrible':
                         extracted_habit[key][1] -= 999
                     # this part should be changed
-                    if curr_exp.result.name in count_typeOfOption['habit_{}'.format(curr_total)]:
-                        count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] += 1
+           
+                    if curr_exp.result.name in count_typeOfOption['habit_{}'.format(curr_total-1)]:
+                        count_typeOfOption['habit_{}'.format(curr_total-1)][curr_exp.result.name] += 1
                     else:
-                        count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] = 1
-                    #return the name of transportation.
-                    resultTransportation = max(count_typeOfOption['habit_{}'.format(curr_total)].iteritems(), key=operator.itemgetter(1))[0]
+                        count_typeOfOption['habit_{}'.format(curr_total-1)][curr_exp.result.name] = 1
+                    #return the name of transportation
+                  
+                    resultTransportation = max(count_typeOfOption['habit_{}'.format(curr_total-1)].items(), key=operator.itemgetter(1))[0]
+                    #if resultTransportation != curr_exp.result.name:
+                        #print('habit_{}'.format(curr_total-1)+", "+ curr_exp.result.name+"_______________________________________________>>>>>>>>>>>>>>>>>>"+resultTransportation)
                     curr_exp.result.name = resultTransportation
                     extracted_habit[key][0] = curr_exp
                     extracted_habit[key][1] += 1
@@ -463,7 +466,13 @@ class habit:
                 count_typeOfOption['habit_{}'.format(curr_total)] = {}
                 count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] = 1
                 curr_total += 1
-                 
+    
+        for curr in count_typeOfOption:
+            print(curr)
+            for in_curr in count_typeOfOption[curr]:
+                print(in_curr)
+                print(count_typeOfOption[curr][in_curr])
+
         res = 'Habits from the experiences are as follows.\n'
         
         for key in extracted_habit:
