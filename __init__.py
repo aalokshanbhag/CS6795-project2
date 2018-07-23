@@ -440,29 +440,31 @@ class habit:
             is_curr_exp_found = False
             for key in extracted_habit:
                 if extracted_habit[key][0] == curr_exp:
+                    if curr_exp.emotion == "horrible":
+                        extracted_habit[key][1] -= 999
                     extracted_habit[key][0] = curr_exp
                     extracted_habit[key][1] += 1
                     is_curr_exp_found = True
             if is_curr_exp_found == False:
                 extracted_habit['habit_{}'.format(curr_total)] = [curr_exp, 1]
                 curr_total += 1
-        res = ""
+        res = "Habits from the experiences are as follows.\n"
         for key in extracted_habit:
             if extracted_habit[key][1] > 3:
-                res += '{} is if '.format(key,)
+                res += '{} is If '.format(key,)
                 curr_habit = extracted_habit[key][0]
                 if curr_habit.health_level != 2:
-                    res +='the agent is not sick and '
+                    res +='the agent is not sick and, '
                 else:
-                    res +='the agent is sick and '
+                    res +='the agent is sick and, '
                 if curr_habit.weather != 2:
-                    res +='the weather is not extremely bad and'
+                    res +='the weather is not extremely bad and, '
                 else:
-                    res +='the weather is extremely bad and'  
+                    res +='the weather is extremely bad and, '  
                 if curr_habit.isRushHour!= 1:
-                    res +='now is not in rush hour '
+                    res +='now is not in rush hour, '
                 else:
-                    res +='now is in rush hour '
+                    res +='now is in rush hour, '
                 if curr_habit.isNight!= 1:
                     res +='now is not at night, '
                 else:
@@ -479,11 +481,11 @@ class habit:
                     res +='the agents posttrip emotion is great, '
                 else:
                     res +='the agents posttrip emotion is horrible, '
-                res += 'then the agent uses {} for the trip \n'.format(curr_habit.result.name)
+                res += 'Then the agent uses {} for the trip! \n'.format(curr_habit.result.name)
         return res
         
     def __str__(self):
-        print_return = 'current habit is as folllows \n'
+        print_return = 'Current experiences are as folllows \n'
         for curr_exp in self.experiences:
             print_return += curr_exp.str()
         return print_return
@@ -631,16 +633,16 @@ def run(input_data, curr_habit):
     '''summary of pre-run status'''
     curr_explanation = explanation()
     curr_experience = experience(curr_agent, curr_env, curr_journey, None)
-    print('current status is as follows \n{}'.format(curr_experience.str()))
+    print('Summary of states in this upcoming trip is as follows \n{}'.format(curr_experience.str()))
     
     if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
      is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].accessability == 1 and \
      is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].availability == 1:
         curr_explanation.add_explanation("Habit is being used to decide the transportation.\n")
-        print('habit is being used to decide the transportation')
+        print('Habit is being used to decide the transportation.\n')
     else:
-        curr_explanation.add_explanation("Habit cannot be used since the current trip does not match to the previous trips. Thus, use the normal cognitive procedure to decide the transportation.\n")
-        print('habit cannot be used, go to the normal cognitive procedure')
+        curr_explanation.add_explanation("Habit cannot be used since the current trip does not match to the previous trips. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n")
+        print('Habit cannot be used. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n')
     
     '''use habit or fire rules in the appropriate order discussed in the report''' 
     if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
@@ -663,15 +665,19 @@ def run(input_data, curr_habit):
         result = choose_best_transportation(candidate_transportations, last_deleted_transportation, car, walk, bus, uber, train, bike, curr_explanation) # function to choose best transporttaion from candidate_transportations list  
     
     '''output and store the experience in habit'''
-    print('best transportation for this trip = {}'.format(result.name))
+    print('Best transportation for this trip = {}'.format(result.name))
     curr_explanation.add_explanation("The agent chooses {} for the transportation for the trip!".format(result.name))
     
+    ''' assign post-trip emotion as output for this trip'''
     curr_agent.emotion = "great"
     if random.randint(0,20) == 0:
         curr_agent.emotion = "horrible"
+    
+    '''store the new experience into list of experience in habit class (object)'''
     curr_experience = experience(curr_agent, curr_env, curr_journey, result)
     curr_habit.add_experience(curr_experience)
     
+    '''print explanation into .txt file'''
     #print(curr_explanation)
     
 def main():
@@ -686,8 +692,7 @@ def main():
     curr_habit = habit()
     for i in range(0, num_input_data):
         print('{}-th travel'.format(i+1))
-        print(curr_habit)
-        print('extracted habit')
+        #print(curr_habit)
         print(curr_habit.extract())
         run(input_data[i], curr_habit)
         print('\n')
