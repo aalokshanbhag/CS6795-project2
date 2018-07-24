@@ -1,0 +1,1138 @@
+1-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+2-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+3-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+4-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+5-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+6-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+7-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+8-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+9-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+10-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+11-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+12-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+13-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the agent is really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 14 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is high, then agent choose uber, bike, bus and car. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses car for the transportation for the trip!
+ 
+14-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+15-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - the agent is sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 3 is fired, which is if the agent is sick then agent is not consider walk and bike and less consider train and bus as their option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+16-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+17-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - the agent is sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 3 is fired, which is if the agent is sick then agent is not consider walk and bike and less consider train and bus as their option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+18-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+19-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+20-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+21-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+22-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+23-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+24-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+25-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+26-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the agent is really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 14 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is high, then agent choose uber, bike, bus and car. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses car for the transportation for the trip!
+ 
+27-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent has a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 16 is fired, which is if travel distance is short, agent have enough time, and the importance level for the travel is okay, then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+28-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+29-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+30-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+31-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - the agent is sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 3 is fired, which is if the agent is sick then agent is not consider walk and bike and less consider train and bus as their option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+32-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent has a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 16 is fired, which is if travel distance is short, agent have enough time, and the importance level for the travel is okay, then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+33-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+34-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+35-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+36-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+37-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+38-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+ - habit_5 is If the agent is not sick and, the weather is not extremely bad and, now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+39-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+ - habit_5 is If the agent is not sick and, the weather is not extremely bad and, now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is at night, the agent has a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 16 is fired, which is if travel distance is short, agent have enough time, and the importance level for the travel is okay, then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+40-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+ - habit_5 is If the agent is not sick and, the weather is not extremely bad and, now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the agent is really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 14 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is high, then agent choose uber, bike, bus and car. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses car for the transportation for the trip!
+ 
+41-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+ - habit_5 is If the agent is not sick and, the weather is not extremely bad and, now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent has a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit is being used to decide the transportation since the states in this upcoming trip match to one of the habits above.
+Based on the habit, The agent chooses bus for the transportation for the trip!
+ 
+42-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 6 is fired, which is if weather is extreamply bad, then agent is not consider walk, bike, train and bus as their possible option.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+43-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+44-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is at night, the agent does not have a lot of time to get a destination, the agent is really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 14 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is high, then agent choose uber, bike, bus and car. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses car for the transportation for the trip!
+ 
+45-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+46-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is in rush hour, now is at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 2 is fired, which is if the agent is tired, then agent is less consider walk and bike as their possible option.. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 5 is fired, which is if weather is slightly bad, then agent is less consider walk, bike, train and bus as their possible option.. 
+ - Rule 10 is fired, which is if the agent in the rush hour, the agent consider train, walk and bike as their option not uber, car, bus.. 
+ - Rule 11 is fired, which is if the agent in the night, the agent dose not consider walk aand less consider bus and train.. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+ - Rule 46 is fired, which is If walk is dangerous and uncomfortable transportation, then the agent tends NOT to choose walk as transportation. 
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+ - Rule 49 is fired, which is If train is dangerous and uncomfortable transportation, then the agent tends NOT to choose train as transportation. 
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 
+47-th travel 
+The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.
+Habits from the experiences are as follows.
+ - habit_1 is If the agent is not sick and, the weather is not extremely bad and, now is in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, Then the agent uses bus for the trip! 
+Summary of states in this upcoming trip is as follows 
+ - The agent is not sick and the weather is not extremely bad and now is not in rush hour, now is not at night, the agent does not have a lot of time to get a destination, the trip is really not really in a hurry, the agents posttrip emotion is great, 
+Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.
+As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.
+Rules associated with agent schema is going to be fired as follows.
+ - Rule 1 is fired, which is if the agent is not tired, then agent is okay with every mode of transportation. 
+ - Rule 8 is fired, which is if the agent is okay to use money to transportation, then agent is okay with train and bus and less consider car and uber as their option.. 
+Rules associated with journey schema is going to be fired as follows.
+ - Rule 13 is fired, which is if travel distance is short, agent have less time, and the importance level for the travel is so so,  then agent choose bike and bus.. 
+Rules associated with environment schema is going to be fired as follows.
+ - Rule 4 is fired, which is if weather is normal, then agent is okay with every mode of transportation. 
+Rules associated with car schema is going to be fired as follows.
+Rules associated with walk schema is going to be fired as follows.
+Rules associated with bus schema is going to be fired as follows.
+Rules associated with uber schema is going to be fired as follows.
+Rules associated with train schema is going to be fired as follows.
+Rules associated with bike schema is going to be fired as follows.
+As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.
+The agent chooses bus for the transportation for the trip!
+ 

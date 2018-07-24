@@ -5,12 +5,6 @@ import pandas as pd
 import random
 import operator
 
-'''ToDO
-1, explanation
-   1-1. define class
-   1-2. rules
-2, >2 case
-'''
 
 class agent:
     '''This class is for an agent's state'''
@@ -23,7 +17,7 @@ class agent:
         self.rules = []
 
     def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation):
-        print('agent rules firing')
+        ##print('agent rules firing')
         curr_explanation.add_explanation('Rules associated with agent schema is going to be fired as follows.\n')
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike) == True:
@@ -44,7 +38,7 @@ class env:
         self.rules = []
 
     def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation):
-        print('env rules firing')
+        ##print('env rules firing')
         curr_explanation.add_explanation('Rules associated with environment schema is going to be fired as follows.\n')
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike):
@@ -66,7 +60,7 @@ class journey:
         self.rules = []
 
     def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation):
-        print('journey rules firing')
+        ##print('journey rules firing')
         curr_explanation.add_explanation('Rules associated with journey schema is going to be fired as follows.\n')
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike):
@@ -90,7 +84,7 @@ class transportation:
         self.rules = []
     
     def fire_rules(self, curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation):
-        print('{} rules firing'.format(self.name))
+        ##print('{} rules firing'.format(self.name))
         curr_explanation.add_explanation('Rules associated with {} schema is going to be fired as follows.\n'.format(self.name))
         for rule in self.rules:
             if rule.isMatch(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike):
@@ -297,7 +291,7 @@ class rule:
 
     def fire_rule(self, curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation):
         curr_explanation.add_explanation(' - Rule {} is fired, which is {}. \n'.format(self.ID, self.human_language))
-        print(' - rule {} is fired, which is "{}"'.format(self.ID, self.human_language))
+        ##print(' - rule {} is fired, which is "{}"'.format(self.ID, self.human_language))
         #Do not exceed 2 !!!!!!!!! -> future work
         if self.rate_car_comfort_level != None:
             car.comfort_level += self.rate_car_comfort_level
@@ -354,27 +348,27 @@ class rule:
             if 1 < bike.availability: bike.availability = 1 
             
         if self.car_eliminate == 1:
-            print('  - delete car from the list')
+            ##print('  - delete car from the list')
             eliminate_transportation("car", candidate_transportations)
             last_deleted_transportation[0] = "car"
         if self.walk_eliminate == 1:
-            print('  - delete walk from the list')
+            ##print('  - delete walk from the list')
             eliminate_transportation("walk", candidate_transportations)
             last_deleted_transportation[0] = "walk"
         if self.bus_eliminate == 1:
-            print('  - delete bus from the list')
+            ##print('  - delete bus from the list')
             eliminate_transportation("bus", candidate_transportations)
             last_deleted_transportation[0] = "bus"
         if self.uber_eliminate == 1:
-            print('  - delete uber from the list')
+            ##print('  - delete uber from the list')
             eliminate_transportation("uber", candidate_transportations)
             last_deleted_transportation[0] = "uber"
         if self.train_eliminate == 1:
-            print('  - delete train from the list')
+            ##print('  - delete train from the list')
             eliminate_transportation("train", candidate_transportations)
             last_deleted_transportation[0] = "train"
         if self.bike_eliminate == 1:
-            print('  - delete bike from the list')
+            ##print('  - delete bike from the list')
             eliminate_transportation("bike", candidate_transportations)
             last_deleted_transportation[0] = "bike"
             
@@ -399,16 +393,39 @@ class experience:
         self.emotion = curr_agent.emotion
         self.result = result
     def str(self):
-        res =  'health_level = {}, '.format(self.health_level) \
-        + 'weather = {}, '.format(self.weather) \
-        + 'isRushHour = {}, '.format(self.isRushHour) \
-        + 'isNight = {}, '.format(self.isNight) \
-        + 'time_available = {}, '.format(self.time_available) \
-        + 'importance_level = {}, '.format(self.importance_level)\
-        + 'emotion = {}, '.format(self.emotion)
+        res = " - "
+        if self.health_level != 2:
+            res += "The agent is not sick and "
+        else:
+            res += "the agent is sick and "
+        if self.weather != 2:
+            res += 'the weather is not extremely bad and '
+        else:
+            res += 'the weather is extremely bad and '
+        if self.isRushHour!= 1:
+            res +='now is not in rush hour, '
+        else:
+            res +='now is in rush hour, '
+        if self.isNight!= 1:
+            res +='now is not at night, '
+        else:
+            res +='now is at night, '  
+        if self.time_available != 0:
+            res +='the agent has a lot of time to get a destination, '
+        else:
+            res +='the agent does not have a lot of time to get a destination, '
+        if self.importance_level != 2:
+            res +='the trip is really not really in a hurry, '
+        else:
+            res +='the agent is really in a hurry, '
+        if self.emotion != "horrible":
+            res +='the agents posttrip emotion is great, '
+        else:
+            res +='the agents posttrip emotion is horrible, '
         if self.result != None:
-            res += 'result = {} \n'.format(self.result.name)
-        #print(res)
+            res += 'Then the agent uses {} for the trip! \n'.format(self.result.name)
+        else:
+            res += '\n'
         return res
         
     def __str__(self):
@@ -446,17 +463,12 @@ class habit:
                 if extracted_habit[key][0] == curr_exp:
                     if curr_exp.emotion == 'horrible':
                         extracted_habit[key][1] -= 999
-                    # this part should be changed
-           
                     if curr_exp.result.name in count_typeOfOption['habit_{}'.format(curr_total-1)]:
                         count_typeOfOption['habit_{}'.format(curr_total-1)][curr_exp.result.name] += 1
                     else:
                         count_typeOfOption['habit_{}'.format(curr_total-1)][curr_exp.result.name] = 1
-                    #return the name of transportation
-                  
+                    #return the name of transportation with highest appearence among one habit
                     resultTransportation = max(count_typeOfOption['habit_{}'.format(curr_total-1)].items(), key=operator.itemgetter(1))[0]
-                    #if resultTransportation != curr_exp.result.name:
-                        #print('habit_{}'.format(curr_total-1)+", "+ curr_exp.result.name+"_______________________________________________>>>>>>>>>>>>>>>>>>"+resultTransportation)
                     curr_exp.result.name = resultTransportation
                     extracted_habit[key][0] = curr_exp
                     extracted_habit[key][1] += 1
@@ -467,17 +479,10 @@ class habit:
                 count_typeOfOption['habit_{}'.format(curr_total)][curr_exp.result.name] = 1
                 curr_total += 1
     
-        for curr in count_typeOfOption:
-            print(curr)
-            for in_curr in count_typeOfOption[curr]:
-                print(in_curr)
-                print(count_typeOfOption[curr][in_curr])
-
-        res = 'Habits from the experiences are as follows.\n'
-        
+        res = 'Habits from the experiences are as follows.\n'        
         for key in extracted_habit:
             if extracted_habit[key][1] > 3:
-                res += '{} is If '.format(key,)
+                res += ' - {} is If '.format(key,)
                 curr_habit = extracted_habit[key][0]
                 if curr_habit.health_level != 2:
                     res +='the agent is not sick and, '
@@ -511,6 +516,12 @@ class habit:
 
         return res
         
+    def str(self):
+        print_return = 'Current experiences are as folllows \n'
+        for curr_exp in self.experiences:
+            print_return += curr_exp.str()
+        return print_return
+        
     def __str__(self):
         print_return = 'Current experiences are as folllows \n'
         for curr_exp in self.experiences:
@@ -528,7 +539,10 @@ class explanation:
             print_res += curr_explanation
         return print_res
     def write_explantion(self):
-        return "TODO"
+        print_res = "The agent decides the best transportation among car, walk, bus, uber, train, bike for the trip in the following way.\n"
+        for curr_explanation in self.explanations:
+            print_res += curr_explanation
+        return print_res
 
 def eliminate_transportation(transportation_name, candidate_transportations):
     '''This is the fuction to remove a transportation from the candidate_transportations list'''
@@ -558,15 +572,15 @@ def choose_best_transportation(input_data, curr_habit, curr_agent, candidate_tra
         # case where there are more than one transportation objects in candidate_transportation list
         # choose one transportation from multiple based on the agent's preference
         result = call_transportation_object_from_string(candidate_transportations[0], car, walk, bus, uber, train, bike)
-        if curr_agent.preference == "price":
-            print("As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with lowest cost from the list since agent current preference is cost.")
+        if curr_agent.preference == "cost":
+            ##print("As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with lowest cost from the list since agent current preference is cost.")
             curr_explanation.add_explanation("As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with lowest cost from the list since agent current preference is cost.\n")
             for curr_candidate_transporation in candidate_transportations:
                 if call_transportation_object_from_string(curr_candidate_transporation, car, walk, bus, uber, train, bike).price < result.price:
                     result = call_transportation_object_from_string(curr_candidate_transporation, car, walk, bus, uber, train, bike)
             return result
         else:
-            print("As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.")
+            ##print("As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.")
             curr_explanation.add_explanation("As there are still more than one transportation left in candidate_transportations list, the agent chooses one transportation with highest safety from the list since agent current preference is safety.\n")
             for curr_candidate_transporation in candidate_transportations:
                 if call_transportation_object_from_string(curr_candidate_transporation, car, walk, bus, uber, train, bike).safety > result.safety:
@@ -575,17 +589,17 @@ def choose_best_transportation(input_data, curr_habit, curr_agent, candidate_tra
     elif len(candidate_transportations) == 0: 
         # case where there is no transportation object in candidate_transportation list
         if curr_agent.num_think == 1:
-            print("The agent think once but still does not get best transportation. Then the agent decides to loose conditions so that the agent is more willing to pay trasnportation fee and does not consider how tired the agent is to make sure s/he can decide best transportation in the next round.") 
+            ##print("The agent think once but still does not get best transportation. Then the agent decides to loose conditions so that the agent is more willing to pay trasnportation fee and does not consider how tired the agent is to make sure s/he can decide best transportation in the next round.") 
             curr_explanation.add_explanation("The agent think once but still does not get best transportation. Then the agent decides to loose conditions so that the agent is more willing to pay trasnportation fee and does not consider how tired the agent is to make sure s/he can decide best transportation in the next round.\n") 
             return think_twice(input_data, curr_habit, curr_explanation)
         else:
-            print("The agent thinks twice but still does not get best transportation. So the agent chooses a transportation which was deleted last from candidate_transportation list while firing rules.")
+            ##print("The agent thinks twice but still does not get best transportation. So the agent chooses a transportation which was deleted last from candidate_transportation list while firing rules.")
             curr_explanation.add_explanation("The agent thinks twice but still does not get best transportation. So the agent chooses a transportation which was deleted last from candidate_transportation list while firing rules.\n")
             transportation_name = last_deleted_transportation[0]
             return call_transportation_object_from_string(transportation_name, car, walk, bus, uber, train, bike)
     else:
         # case where there is only one transportation object left in candidate_transportations list
-        print("The agent chooses one trasportation left in candidate_transportations list.")
+        ##print("The agent chooses one trasportation left in candidate_transportations list.")
         curr_explanation.add_explanation("The agent chooses one trasportation left in candidate_transportations list. \n")
         return call_transportation_object_from_string(candidate_transportations[0], car, walk, bus, uber, train, bike)
     
@@ -622,7 +636,7 @@ def is_use_habit(curr_habit, curr_agent, curr_env, curr_journey):
         (experience.time_available == curr_journey.time_available or (experience.time_available != 2 and curr_journey.time_available != 2)) and\
         (experience.importance_level == curr_journey.importance_level or (experience.importance_level != 2 and curr_journey.importance_level != 2)):
             if experience.emotion == "horrible": # case where agent re-consider the transportation because of horrible experience
-                print("Because of the previous bad experience, emotion state for the agent becomes horrible so that the agent cannot use habit!!! \n ")
+                ##print("Because of the previous bad experience, emotion state for the agent becomes horrible so that the agent cannot use habit!!! \n ")
                 return False, None
             count += 1
             habituated_transportation = experience.result
@@ -630,7 +644,7 @@ def is_use_habit(curr_habit, curr_agent, curr_env, curr_journey):
         return True, habituated_transportation
     return False, None      
 
-def run(input_data, curr_habit):
+def run(input_data, curr_habit, text_file):
     '''create non-rule objects''' 
     # create agent object
     curr_agent = agent(input_data[1], input_data[2], input_data[3])
@@ -684,17 +698,18 @@ def run(input_data, curr_habit):
     
     '''summary of pre-run status'''
     curr_explanation = explanation()
+    curr_explanation.add_explanation(curr_habit.extract())
     curr_experience = experience(curr_agent, curr_env, curr_journey, None)
-    print('Summary of states in this upcoming trip is as follows \n{}'.format(curr_experience.str()))
-    
+    ##print('\n Summary of states in this upcoming trip is as follows \n{}'.format(curr_experience.str()))
+    curr_explanation.add_explanation('Summary of states in this upcoming trip is as follows \n{}'.format(curr_experience.str()))
     if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
      is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].accessability == 1 and \
      is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].availability == 1:
-        curr_explanation.add_explanation("Habit is being used to decide the transportation.\n")
-        print('Habit is being used to decide the transportation.\n')
+        curr_explanation.add_explanation("Habit is being used to decide the transportation since the states in this upcoming trip match to one of the habits above.\n")
+        ##print('Habit is being used to decide the transportation.\n')
     else:
         curr_explanation.add_explanation("Habit cannot be used since the current trip characteristics does not match to any habit. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n")
-        print('Habit cannot be used. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n')
+        ##print('Habit cannot be used. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n')
     
     '''use habit or fire rules in the appropriate order discussed in the report''' 
     if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
@@ -703,7 +718,7 @@ def run(input_data, curr_habit):
         result = is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1]
         curr_explanation.add_explanation("Based on the habit, ")
     else: # case where habit does not work to decide the transportation so that the agent dive into the cognitive procedure
-        curr_explanation.add_explanation("As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with agent schema ")
+        curr_explanation.add_explanation("As found through the literature reviews and interviews, rules associated with agent schema are fired first. rules associated with journey schema, environment schema,j transporation schema follows.\n")
         curr_agent.fire_rules(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation)   #fire rules associated to agent
         curr_journey.fire_rules(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation) #fire rules associated to journey
         curr_env.fire_rules(curr_agent, curr_env, curr_journey, car, walk, bus, uber, train, bike, candidate_transportations, last_deleted_transportation, curr_explanation)     #fire rules associated to env
@@ -723,7 +738,7 @@ def run(input_data, curr_habit):
     
     ''' assign post-trip emotion as output for this trip'''
     curr_agent.emotion = "great"
-    if random.randint(0,40) == 0:
+    if random.randint(0,10) == 0:
         curr_agent.emotion = "horrible"
     
     '''store the new experience into list of experience in habit class (object)'''
@@ -731,8 +746,10 @@ def run(input_data, curr_habit):
     curr_habit.add_experience(curr_experience)
     
     '''print explanation into .txt file'''
-    print("--------------")
-    print(curr_explanation)
+    #print("--------------")
+    text_file.write(curr_explanation.write_explantion())
+    #final_explanation += curr_explanation.write_explantion()
+    #print(curr_explanation)
     
     
 def think_twice(input_data, curr_habit, curr_explanation):
@@ -789,16 +806,16 @@ def think_twice(input_data, curr_habit, curr_explanation):
     
     '''summary of pre-run status'''
     curr_experience = experience(curr_agent, curr_env, curr_journey, None)
-    print('Summary of states in this upcoming trip is as follows \n{}'.format(curr_experience.str()))
+    ##print('Summary of states in this upcoming trip is as follows \n{}'.format(curr_experience.str()))
     
     if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
      is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].accessability == 1 and \
      is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[1].availability == 1:
         curr_explanation.add_explanation("Habit is being used to decide the transportation.\n")
-        print('Habit is being used to decide the transportation.\n')
+        ##print('Habit is being used to decide the transportation.\n')
     else:
         curr_explanation.add_explanation("Habit cannot be used since the current trip does not match to the previous trips. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n")
-        print('Habit cannot be used. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n')
+        ##print('Habit cannot be used. Thus, the agent uses the normal cognitive procedure to decide the transportation.\n')
     
     '''use habit or fire rules in the appropriate order discussed in the report''' 
     if is_use_habit(curr_habit, curr_agent, curr_env, curr_journey)[0] == True and\
@@ -821,7 +838,7 @@ def think_twice(input_data, curr_habit, curr_explanation):
         result = choose_best_transportation(input_data, curr_habit, curr_agent, candidate_transportations, last_deleted_transportation, car, walk, bus, uber, train, bike, curr_explanation) # function to choose best transporttaion from candidate_transportations list  
     
     '''output and store the experience in habit'''
-    print('Best transportation for this trip = {}'.format(result.name))
+    ##print('Best transportation for this trip = {}'.format(result.name))
     curr_explanation.add_explanation("The agent chooses {} for the transportation for the trip!".format(result.name))
     
     return result
@@ -839,12 +856,17 @@ def main():
 
     # habit
     curr_habit = habit()
+    text_file = open("Output.txt", "w")
     for i in range(0, num_input_data):
+        text_file.write('{}-th travel \n'.format(i+1))
         print('{}-th travel'.format(i+1))
         #print(curr_habit)
-        print(curr_habit.extract())
-        run(input_data[i], curr_habit)
+        ##print(curr_habit.extract())
+        run(input_data[i], curr_habit, text_file)
+        text_file.write('\n \n')
         print('\n')
+
+    text_file.close()
 
 if __name__ == "__main__":
     main()
